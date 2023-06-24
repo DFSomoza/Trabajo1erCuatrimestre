@@ -1,0 +1,37 @@
+* {
+    margin: 0px auto;
+}
+h1 {
+    font-size: 48px;
+    margin: 0 0 16px 0;
+  }
+
+h2 {
+    border-bottom: 3px solid green;
+}
+
+.colorTituloLogo {
+    color: orange;
+    padding: 10px 0;  
+  
+  }
+
+#myBody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*background-color: #f1f1f1;*/
+    background: azure;
+}
+
+.pagpie {
+   background-color: rgb(167, 247, 247); 
+   text-align: center;
+   padding: 5px;
+   margin: 5px;
+}
+#trademark {
+   font-size: 18px; 
+   font-style: italic;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   color: blue;
+    
+}
