@@ -1,3 +1,28 @@
+* {
+    margin: 0px auto;
+}
+
+h1 {
+    font-size: 48px;
+    margin: 0 0 16px 0;
+  }
+
+h2 {
+    border-bottom: 3px solid green;
+}
+
+.colorTituloLogo {
+    color: blue;
+    padding: 10px 0;
+    font-size: 24px;  
+}
+
+#myBody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*background-color: #f1f1f1;*/
+    background: azure;
+}
+
 .contenedor-principal {
     display: flex;
     flex-direction: column;

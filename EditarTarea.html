@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/a042f58754.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- Mis hojas de Estilo-->
     <link rel="stylesheet" href="EditarTarea.css">
     <title>To do List - Editar Tareas</title>
 </head>
-<body>
-    <div class="contenedor-principal">
+
+<body class="img-fluid" id="myBody">
+    <header>
+        <!--Nav mobile-->
+        <nav class="navbar  navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand" href="EditarTarea.html">
+                        <img src="./imagenes/Hospital.jpg" class="img-thumbnail" alt="Hospital" width="80px">
+                        <a class="navbar-brand colorTituloLogo" href="#">Hospital Municipal Dr. Etchegaray</a>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="EditarTarea.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#acerca">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contacto">Noticias y Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#ubicacion">Ubicación</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <h2>Noticias y Novedades</h2>
+        <section>
+            <article>
+                <h3>Pos 1</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit amet, numquam velit deleniti
+                    eligendi quasi! Quod magnam debitis quaerat reiciendis dolor omnis, beatae odit aspernatur saepe
+                    expedita, iure iste modi!</p>
+
+            </article>
+            <article>
+                <h3>Pos 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores soluta quas ut ipsum, nesciunt neque
+                    sequi dolore reprehenderit id doloremque voluptatibus saepe sapiente, perspiciatis repellat!
+                    Accusamus alias nulla repellat corporis.</p>
+            </article>
+        </section>
+        <section>
+
+        </section>
+        <!--div class="contenedor-principal">
         <div class="d-flex flex-column"></div>
         <p>Estoy</p>
 
-    </div>
-
+    </div-->
+    </main>
+    <aside>
+        <iframe width="300" height="200" src="https://youtu.be/bwleqLlAu-Y" frameborder="0" allow="accelerometer; autoplay;
+        encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </aside>
+    <aside>
+        <a href="#" src="publicidad.git" alt="Publicidad"></a>
+    </aside>
+    <footer>
+        <address>
+            Autor: Daniel Somoza <br>
+            Email: <a href="milto:dfsistemas64@hotmail.com">dfsistemas64@hotmail.com</a>
+        </address>
+    </footer>
     <script src="EditarTarea.js"></script>
 </body>
+
 </html>

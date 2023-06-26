@@ -12,6 +12,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- Mis hojas de Estilo-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="styles.css">
     <title>DFSistemas</title>
 </head>
@@ -48,7 +49,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#ubicacion">Ubicación</a>
                         </li>
-                       
+
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar...." aria-label="Buscar">
@@ -66,10 +67,14 @@
                 <div class="card-group">
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="card-title">Diseño Web</h3>
-                            <p class="card-text">Diseño Full Stack "Front End - Back End"</p>
+                            <h3 class="card-title">Desarrollo Web</h3>
+                            <p class="card-text">Desarrollo Full Stack "Front End - Back End"</p>
                             <img src="./imagenes/web-design.jpg" class="card-img-top" style="height: 300px;" alt="">
-                            <a href="#" class="btn btn-primary">Detalle</a>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.getElementById('detalleModal1').style.display='block'">
+                                Detalle
+                            </button>
+
                         </div>
                     </div>
                     <div class="card">
@@ -77,7 +82,10 @@
                             <h3 class="card-title">Venta de Insumos</h3>
                             <p class="card-text">Venta de insumos, equipos, etc.</p>
                             <img src="./imagenes/Insumos.png" class="card-img-top" style="height: 300px;" alt="">
-                            <a href="#" class="btn btn-primary">Detalle</a>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.getElementById('detalleModal2').style.display='block'">
+                                Detalle
+                            </button>
                         </div>
                     </div>
                     <div class="card">
@@ -86,32 +94,109 @@
                             <p class="card-text">Servicio Técnico en Software - Hardware</p>
                             <img src="./imagenes/actualizaciones.jpg" class="card-img-top" style="height: 300px;"
                                 alt="">
-                            <a href="#" class="btn btn-primary">Detalle</a>
+                            <button type="button" class="btn btn-primary"
+                                onclick="document.getElementById('detalleModal3').style.display='block'">
+                                Detalle
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Detalle Modal -->
+            <div class="modal" id="detalleModal1">
+                <div class="w3-modal-content w3-animate-top w3-card-4">
+                    <header class="w3-container w3-teal w3-left w3-padding-32">
+                        <span onclick="document.getElementById('detalleModal1').style.display='none'"
+                            class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                        <h2 class="w3-wide">Desarrollo Web</h2>
+                        <div class="w3-container">
+                            <p>Curso de Desarrollo Web Codo a Codo 4.0 <b>Full Stack Python</b> en el 2º cuatrimestre
+                                del año 2021 a través de su
+                                platarforma virtual.</p>
+                            <h4><b>Front - End</b></h4>
+                            <ul>
+                                <li>HTML - CCS - Java Script - VUE.js - JSON</li>
+                            </ul>
+                            <h4><b>Back - End</b></h4>
+                            <ul>
+                                <li>MySQL - Python - Flask - CRUD</li>
+                            </ul>
+                            <h4><b>Node JS Back - End</b></h4>
+                            <p>Desarrollado en el 1º cuatrimestre del año 2022</p>
+                            <h4><b>REACT - CaC Inicial</b></h4>
+                            <p>Desarrollado en el 2º cuatrimestre del año 2022</p>
+                            <h4><b>Full Stack Cepit - UIA Olavarría</b></h4>
+                            <p>En dasarrollo durante los años 2023 y 2024 en forma virtual - presencial</p>
+
+                            <button class="w3-button w3-red w3-section"
+                                onclick="document.getElementById('detalleModal1').style.display='none'">Cerrar <i
+                                    class="fa fa-remove"></i></button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <div class="modal" id="detalleModal2">
+                <div class="w3-modal-content w3-animate-top w3-card-4">
+                    <header class="w3-container w3-teal w3-left w3-padding-32">
+                        <span onclick="document.getElementById('detalleModal2').style.display='none'"
+                            class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                        <h2 class="w3-wide">Venta de Insumos</h2>
+                        <div class="w3-container">
+                            <p><b>Venta y Comercialización de Equipos de Computación</b></p>
+                            <p>Venta de Tecnología como Impresoras Laser comunes, multifunciones, Impresoras Inkjet,
+                                Monitores, Computadoras, equipos All-in-one, Noteboock, Servidores,
+                                Lectores de barras, accesorios y componentes.</p>
+                            <p>Venta de Insumos como Cartuchos, Toner´s, Resmas de Hojas A4 Oficio, de 70, 75 y 80 gr.
+                            </p>
+                            <p>Venta de cables para redes, conectores, Router, Hub, Path Panel, Racks y accesorios para
+                                conectividad.</p>
+                            <button class="w3-button w3-red w3-section"
+                                onclick="document.getElementById('detalleModal2').style.display='none'">Cerrar <i
+                                    class="fa fa-remove"></i></button>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <div class="modal" id="detalleModal3">
+                <div class="w3-modal-content w3-animate-top w3-card-4">
+                    <header class="w3-container w3-teal w3-left w3-padding-32">
+                        <span onclick="document.getElementById('detalleModal3').style.display='none'"
+                            class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+                        <h2 class="w3-wide">Servicios Informáticos</h2>
+                        <div class="w3-container">
+                            <p><b>Instalaciones de Sistemas Operativos Windows de distintas versiones, offices y variedad de programas</b></p>
+                            <p>Servicio de mantenimiento y limpieza de notebook y computadoras para su mejor funcionamiento.</p>
+                            <p>Clonación de Discos de Hd a SSD y viceversa. Actualizaciónes de Memoria, discos y accesorios.</p>
+                            <p>Servicio de atención remota o personalizada a negocios, empresas, etc.</p>
+                            <button class="w3-button w3-red w3-section"
+                                onclick="document.getElementById('detalleModal3').style.display='none'">Cerrar <i
+                                    class="fa fa-remove"></i></button>
+                        </div>
+                    </header>
+                </div>
+            </div>
         </section>
+
         <section>
             <!-- Section Acerca de -->
             <div class="card" id="acerca">
                 <h2 class="w3-wide">DFSistemas</h2>
                 <p class="w3-opacity">Empresa dedicada a la programación, mantenimiento de Sistemas propios, equipos,
-                    redes, etc, desde el año 1991</p>
-                <p class="w3-opacity">en distintas ciudades como Olavarría, General La Madrid, Daireaux, Tapalqué, etc.;
-                    en el área de Salud en Hospital,
-                <p class="w3-opacity">Facturación Fiscal - Facturación Electrónica individual, por lote de comercios
-                    mediante Web-Service</p>
-                <p class="w3-opacity">Sistemas para Sellos, Médicos, Servicios Sociales, Sepelios a medida del cliente</p>
-                <p class="w3-opacity">Intalaciones de S.O, programas de paquetes Office, etc, mantenimiento de equipos</p>
+                    redes, etc, desde el año 1991.</p>
+                <p class="w3-opacity">Las lleva a cabo en ciudades como Olavarría, General La Madrid, Daireaux,
+                    Tapalqué, etc.;
+                    tanto en el área de Salud como en comercios.</p>
+                <p class="w3-opacity">Sistemas de Facturación Fiscal, Electrónica individual o por lote de comercios
+                    mediante Web-Service.</p>
+                <p class="w3-opacity">Sistemas a medida para Sellos, Médicos, Servicios Sociales, Sepelios, etc.</p>
                 <p class="w3-opacity"></p>
                 <div class="w3-container">
                     <h3>Datos Personales</h3>
                     <ul class="w3-ul w3-border w3-white w3-text-grey">
                         <li class="w3-padding-large">Titular:<span class="w3-tag w3-black w3-margin-left">Daniel F.
                                 Somoza</span></li>
-                        <li class="w3-padding-large">Especialidad:<span class="w3-tag w3-black w3-margin-left">en Área
-                                Informática</span></li>
+                        <li class="w3-padding-large">Especialidad:<span
+                                class="w3-tag w3-black w3-margin-left">Informática</span></li>
                         <li class="w3-padding-large">Especialización: <span
                                 class="w3-tag w3-black w3-margin-left">Programación de Escritorio - Web</span></li>
                         <li class="w3-padding-large">Estudios realizados: Universitario Incompleto<span
@@ -138,8 +223,9 @@
 
                 <div class="w3-col m6 w3-large w3-margin-bottom" !important>
                     <i class="fa fa-user" style="width:20px;"></i>Daniel Fernando Somoza<br>
-                    <i class="fa fa-map-marker" style="width:20px"></i>Tacuarí Nº 2554 - (7400) Olavarría, Argentina<br>
-                    <i class="fa fa-phone" style="width:20px"></i> Teléfonos: +54 9 2284 58-4362 - 02284-455094<br>
+                    <i class="fa fa-map-marker" style="width:20px"></i>Domicilio: Tacuarí Nº 2554 - (7400) Olavarría, Argentina<br>
+                    <i class="fa fa-phone" style="width:20px"></i>Teléfonos: +54 9 2284 58-4362 - 02284-455094<br>
+                    <i class="fa fa-sms" style="width:20px"></i>WhatsApp: +54 9 2284 58-4362<br>
                     <i class="fa fa-envelope" style="width:20px"> </i> email: dfsistemas64@hotmail.com<br>
                 </div>
                 <!--form method="POST" name="contacto" data-netlify="true"-->
@@ -150,7 +236,7 @@
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" id="exampleFormControlInput1" required name="email"
-                            placeholder="name@example.com" style="width: 400px;">
+                            placeholder="nombre@ejemplo.com" style="width: 400px;">
                     </div>
                     <div class="mb-3">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje"
@@ -188,6 +274,7 @@
                 aria-hidden="true"></i></a>
         <p id="trademark">DFSistemas@2023</p>
     </footer>
+    <script src="./index.js"></script>
 </body>
 
 </html>
