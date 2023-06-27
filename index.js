@@ -1,3 +1,6 @@
+function myFunction(){
+    
+}
 var modal = document.getElementById('detalleModal1');
 window.onclick = function(event) {
     if (event.target == modal) {
@@ -18,3 +21,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+var nombre = document.getElementById('nombreIngresado');
+    console.log(nombre);

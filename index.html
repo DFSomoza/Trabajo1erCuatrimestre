@@ -18,14 +18,13 @@
 </head>
 
 <body class="img-fluid" id="myBody">
-
     <header>
         <!--Nav mobile-->
-        <nav class="navbar  navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-sm bg-body-tertiary" role="navigation">
             <div class="container-fluid">
                 <div class="d-flex align-items-center">
                     <a class="navbar-brand" href="#">
-                        <img src="./imagenes/dfsistemas_logo.png" class="img-thumbnail" alt="DFSistemas" height="auto">
+                        <img src="./imagenes/dfsistemas_logo.png" class="img-thumbnail" alt="DFSistemas">
                         <a class="navbar-brand colorTituloLogo" href="#servicios">Servicios Informáticos</a>
                     </a>
                 </div>
@@ -33,8 +32,6 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -51,14 +48,9 @@
                         </li>
 
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar...." aria-label="Buscar">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>
-
     </header>
     <main>
         <section>
@@ -70,7 +62,7 @@
                             <h3 class="card-title">Desarrollo Web</h3>
                             <p class="card-text">Desarrollo Full Stack "Front End - Back End"</p>
                             <img src="./imagenes/web-design.jpg" class="card-img-top" style="height: 300px;" alt="">
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-primary" style="margin-top: 5px;"
                                 onclick="document.getElementById('detalleModal1').style.display='block'">
                                 Detalle
                             </button>
@@ -82,7 +74,7 @@
                             <h3 class="card-title">Venta de Insumos</h3>
                             <p class="card-text">Venta de insumos, equipos, etc.</p>
                             <img src="./imagenes/Insumos.png" class="card-img-top" style="height: 300px;" alt="">
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-primary" style="margin-top: 5px;"
                                 onclick="document.getElementById('detalleModal2').style.display='block'">
                                 Detalle
                             </button>
@@ -94,7 +86,7 @@
                             <p class="card-text">Servicio Técnico en Software - Hardware</p>
                             <img src="./imagenes/actualizaciones.jpg" class="card-img-top" style="height: 300px;"
                                 alt="">
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-primary" style="margin-top: 5px;"
                                 onclick="document.getElementById('detalleModal3').style.display='block'">
                                 Detalle
                             </button>
@@ -164,9 +156,12 @@
                             class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
                         <h2 class="w3-wide">Servicios Informáticos</h2>
                         <div class="w3-container">
-                            <p><b>Instalaciones de Sistemas Operativos Windows de distintas versiones, offices y variedad de programas</b></p>
-                            <p>Servicio de mantenimiento y limpieza de notebook y computadoras para su mejor funcionamiento.</p>
-                            <p>Clonación de Discos de Hd a SSD y viceversa. Actualizaciónes de Memoria, discos y accesorios.</p>
+                            <p><b>Instalaciones de Sistemas Operativos Windows de distintas versiones, offices y
+                                    variedad de programas</b></p>
+                            <p>Servicio de mantenimiento y limpieza de notebook y computadoras para su mejor
+                                funcionamiento.</p>
+                            <p>Clonación de Discos de Hd a SSD y viceversa. Actualizaciónes de Memoria, discos y
+                                accesorios.</p>
                             <p>Servicio de atención remota o personalizada a negocios, empresas, etc.</p>
                             <button class="w3-button w3-red w3-section"
                                 onclick="document.getElementById('detalleModal3').style.display='none'">Cerrar <i
@@ -189,7 +184,6 @@
                 <p class="w3-opacity">Sistemas de Facturación Fiscal, Electrónica individual o por lote de comercios
                     mediante Web-Service.</p>
                 <p class="w3-opacity">Sistemas a medida para Sellos, Médicos, Servicios Sociales, Sepelios, etc.</p>
-                <p class="w3-opacity"></p>
                 <div class="w3-container">
                     <h3>Datos Personales</h3>
                     <ul class="w3-ul w3-border w3-white w3-text-grey">
@@ -199,31 +193,31 @@
                                 class="w3-tag w3-black w3-margin-left">Informática</span></li>
                         <li class="w3-padding-large">Especialización: <span
                                 class="w3-tag w3-black w3-margin-left">Programación de Escritorio - Web</span></li>
-                        <li class="w3-padding-large">Estudios realizados: Universitario Incompleto<span
+                        <li class="w3-padding-small">Estudios realizados: Universitario Incompleto<span
                                 class="w3-badge w3-right w3-margin-right"></span></li>
-                        <li class="w3-padding-large">Año 2021: Full Stack Python Codo a Codo 2º cuatrimestre<span
+                        <li class="w3-padding-small">Año 2021: Full Stack Python Codo a Codo 2º cuatrimestre<span
                                 class="w3-badge w3-right w3-margin-right"></span></li>
-                        <li class="w3-padding-large">Año 2022: Node JS Codo a Codo 1º cuatrimestre<span
+                        <li class="w3-padding-small">Año 2022: Node JS Codo a Codo 1º cuatrimestre<span
                                 class="w3-badge w3-right w3-margin-right"></span></li>
-                        <li class="w3-padding-large">Año 2022: React y (CaC) Inicial Codo a Codo 2º cuatrimestre<span
+                        <li class="w3-padding-small">Año 2022: React y (CaC) Inicial Codo a Codo 2º cuatrimestre<span
                                 class="w3-badge w3-right w3-margin-right"></span></li>
-                        <li class="w3-padding-large">Año 2023: Full Stack Web Escuela IT cepit - UIO Olavarría<span
+                        <li class="w3-padding-small">Año 2023: Full Stack Web Escuela IT cepit - UIO Olavarría<span
                                 class="w3-badge w3-right w3-margin-right"></span></li>
 
                     </ul>
+                    <div class="mb-3">
+                        <a class="btn btn-info" href="index.html" role="button" style="margin-top: 10px;">Retornar</a>
+                    </div>
                 </div>
             </div>
             <!-- Section Contactos -->
             <div class="card" id="contacto">
                 <h2 class="text-center">CONTACTO</h2>
-
                 <p><i>Por Consulta? Déjenos un mensaje!</i></p>
-
-                <!--div class="card-group"-->
-
                 <div class="w3-col m6 w3-large w3-margin-bottom" !important>
                     <i class="fa fa-user" style="width:20px;"></i>Daniel Fernando Somoza<br>
-                    <i class="fa fa-map-marker" style="width:20px"></i>Domicilio: Tacuarí Nº 2554 - (7400) Olavarría, Argentina<br>
+                    <i class="fa fa-map-marker" style="width:20px"></i>Domicilio: Tacuarí Nº 2554 - (7400) Olavarría,
+                    Argentina<br>
                     <i class="fa fa-phone" style="width:20px"></i>Teléfonos: +54 9 2284 58-4362 - 02284-455094<br>
                     <i class="fa fa-sms" style="width:20px"></i>WhatsApp: +54 9 2284 58-4362<br>
                     <i class="fa fa-envelope" style="width:20px"> </i> email: dfsistemas64@hotmail.com<br>
@@ -232,7 +226,7 @@
                 <form action="15.1- show_data.html" target="_blank">
                     <div class="mb-3">
                         <input type="text" class="form-control" placeholder="Nombre" required name="Name"
-                            style="width: 400px;">
+                            id="nombreIngresado" style="width: 400px;">
                     </div>
                     <div class="mb-3">
                         <input type="email" class="form-control" id="exampleFormControlInput1" required name="email"
@@ -242,7 +236,10 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje"
                             required name="Message" style="width: 400px;"></textarea>
                     </div>
-                    <button class="btn btn-success" type="submit" id="submit">Enviar</button>
+                    <div class="mb-3">
+                        <button class="btn btn-success" type="submit" id="submit">Enviar</button>
+                        <a class="btn btn-info" href="index.html" role="button">Retornar</a>
+                    </div>
                 </form>
             </div>
         </section>
@@ -250,14 +247,17 @@
             <!-- Imagen de location/map -->
             <div class="card" id="ubicacion">
                 <h2 class="text-center">UBICACION</h2>
-                <h4 class="card-title">Daniel F. Somoza</h4>
-                <h5> <a href="https://goo.gl/maps/HBJiFVKTE6ZjvD838" target="blank">Tacuarí 2554 - Olavarría - Pcia. de
+                <h5 class="text-bg-dark"> <a href="https://goo.gl/maps/HBJiFVKTE6ZjvD838" target="blank" style="text-decoration: none;">Tacuarí 2554 - Olavarría - Pcia. de
                         Bs. As.</a></h5>
-                <h6>Atención de Lunes a Viernes de 9 a 20 hs</h6>
+                <h6 class="text-bg-primary">Atención de Lunes a Viernes de 9 a 20 hs</h6>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.1773018896815!2d-60.335950999999994!3d-36.88610649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95944597077cfb87%3A0xf1eb2c6fb18b060f!2sTacuar%C3%AD%202554%2C%20Olavarr%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1662819722633!5m2!1ses-419!2sar"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    width="1000px" height="400" style="border:0;" allowfullscreen="true" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="mb-3">
+                    <a class="btn btn-info" href="index.html" role="button" style="margin-top: 10px;">Retornar</a>
+                </div>
 
             </div>
         </section>
