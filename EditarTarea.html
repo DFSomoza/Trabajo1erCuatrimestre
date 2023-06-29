@@ -18,54 +18,99 @@
 
 <body class="img-fluid" id="myBody">
     <header>
-        <!--Nav mobile-->
-        <nav class="navbar  navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <a class="navbar-brand" href="EditarTarea.html">
-                        <img src="./imagenes/Hospital.jpg" class="img-thumbnail" alt="Hospital" width="80px">
-                        <a class="navbar-brand colorTituloLogo" href="#">Hospital Municipal Dr. Etchegaray</a>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="EditarTarea.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#acerca">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#contacto">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#contacto">Noticias y Novedades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#ubicacion">Ubicación</a>
-                        </li>
-
-                    </ul>
-                </div>
+        <h1>Hospital Municipal Dr. Etchegaray</h1>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="./imagenes/Hospital.jpg" class="img-thumbnail" alt="Hospital" width="80px">
+                </a>
             </div>
+            <a class="navbar-brand" href="EditarTarea.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Noticias y Novedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ubicación</a>
+                    </li>
+                </ul>
         </nav>
-
+        </nav>
     </header>
-    <div class="contenedor-principal">
-        <ul>
-            <li>Tarea Nro: 1</li>
-            
-        </ul>
-        
-    </div>
+    <main>
+        <div class="container">
+            <a href="#nuevoMedico" class="btn btn-success" style="margin-top: 5px;">Agregar Médico</a>
+            <div id="idtabla">
 
-    <footer>
-        <address>
-            Autor: Daniel Somoza <br>
-            Email: <a href="milto:dfsistemas64@hotmail.com">dfsistemas64@hotmail.com</a>
-        </address>
+
+            </div>
+        </div>
+        <section id="nuevoMedico">
+            <div class="container">
+                <h2>Nuevo Médico</h2>
+                <form>
+                    <div>
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <label class="form-label">Nombre:</label>
+                            <div class="flex-grow-1">
+                                <input id="nombre" class="form-control" type="text" />
+                                <small id="error-nombre" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <label class="form-label">Especialidad:</label>
+                            <div class="flex-grow-1">
+                                <input id="especialidad" class="form-control" type="text" />
+                                <small id="error-especialidad" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <label class="form-label">Atención:</label>
+                            <div class="flex-grow-1">
+                                <input id="atencion" class="form-control" type="text" />
+                                <small id="error-atencion" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <label class="form-label">Email:</label>
+                            <div class="flex-grow-1">
+                                <input id="email" class="form-control" type="email" />
+                                <small id="error-email" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-end botonera"></div>
+                        <button type="button" class="btn btn-success" onclick="nuevoMedico()">Grabar</button>
+                        <!--a class="btn btn-info" href="EditarTarea.html" role="button">Retornar</a-->
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pagpie">
+        <p class="w3-medium">Powered by <a href="https://dfsistemas.netlify.app/" target="_blank"
+                style="text-decoration: none;">DFSistemas @2023</a></p>
     </footer>
-    <script src="EditarTarea.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/EditarTarea.js"></script>
 </body>
 
 </html>

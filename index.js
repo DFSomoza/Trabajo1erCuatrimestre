@@ -1,5 +1,6 @@
-function myFunction(){
-    
+function enviarFormulario ()  {
+    const nombreInput = document.getElementById('nombre');
+
 }
 var modal = document.getElementById('detalleModal1');
 window.onclick = function(event) {
