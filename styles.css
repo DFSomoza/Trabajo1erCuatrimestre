@@ -41,3 +41,11 @@ h2 {
    color: blue;
     
 }
+
+.botonera {
+  padding: 10px 20px;
+}
+
+.mensaje-error {
+  color: red;
+}

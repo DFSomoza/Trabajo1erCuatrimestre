@@ -19,6 +19,12 @@ const validarNombre = () => {
   }
 }
 
+const limpiarFormulario = () => {
+  let formulario = document.getElementById('formul');
+  formulario.reset();
+}
+
+
 
 const nuevoMedico = () => {
   let formularioCorrecto = true;
@@ -53,6 +59,7 @@ const nuevoMedico = () => {
     formularioCorrecto = false;
   } else {
     document.getElementById('error-nombre').innerHTML = "";
+    formularioCorrecto = true;
   }
 
   if (nombreEspecialidad.trim() == "") {
@@ -61,6 +68,7 @@ const nuevoMedico = () => {
     formularioCorrecto = false;
   } else {
     document.getElementById('error-especialidad').innerHTML = "";
+    formularioCorrecto = true;
   }
 
   if (diasDeAtencion.trim() == "") {
@@ -69,6 +77,7 @@ const nuevoMedico = () => {
     formularioCorrecto = false;
   } else {
     document.getElementById('error-atencion').innerHTML = "";
+    formularioCorrecto = true;
   }
 
   if (direccionDeEmail.trim() == "") {
@@ -81,6 +90,7 @@ const nuevoMedico = () => {
     formularioCorrecto = false;
   } else {
     document.getElementById('error-email').innerHTML = "";
+    formularioCorrecto = true;
   }
 
   if (formularioCorrecto) {
@@ -90,7 +100,8 @@ const nuevoMedico = () => {
       nombre: nombreMedico,
       especialidad: nombreEspecialidad,
       descripcion: diasDeAtencion,
-      contacto: direccionDeEmail
+      contacto: direccionDeEmail,
+      activo: true
     };
     data.push(nuevoMedico);
     console.log(data);
@@ -98,16 +109,34 @@ const nuevoMedico = () => {
   } else {
     console.log("Formulario incorrecto");
   }
+  limpiarFormulario();
 }
 //*********** Funcion Eliminar Medico **********************//
 const eliminaMedico = (identificador) => {
-  //if (data.length > 0) {
-    data.splice(identificador, 1);
-    console.log(data);
-    dibujarTabla();
-  //}
+  data.splice(identificador, 1);
+  console.log(data);
+  dibujarTabla();
 }
 
+const cambiaEstado = (estado, identificador) => {
+  console.log(estado, identificador);
+  //let lActivo =  document.getElementById(String(identificador)).innerHTML = false;
+  //console.log(lActivo);
+  if (estado) {
+    data[identificador].activo = false;
+    document.getElementById(String(identificador)).innerHTML = false;
+    /*
+    document.data["ck" + String(estado)].style.display = "none";
+    document.data["ck" + String(estado)].value = false;
+    document.getElementByName("ck" + String(estado)).innerHTML = "";
+    */
+  } else {
+      data[identificador].activo = true;
+      document.getElementById(String(identificador)).innerHTML = true;
+  }
+  console.log(data[identificador].activo);
+  dibujarTabla();
+}
 
 const dibujarTabla = () => {
   //if (document.getElementById("idtabla")) {
@@ -122,6 +151,7 @@ const dibujarTabla = () => {
                 <th scope="col">Especialidad</th>
                 <th scope="col">Atención</th>
                 <th scope="col">Contacto</th>
+                <th scope="col">Activo</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -136,7 +166,9 @@ const dibujarTabla = () => {
             <td>${data[i].especialidad}</td>
             <td>${data[i].descripcion}</td>
             <td>${data[i].contacto}</td>
+            <td><input type="checkbox" value="" name ="check${i}" id="${i}" ></td>
             <td><button onclick="eliminaMedico(${i})" type="button" class="btn btn-outline-success">Eliminar</button></td>
+            <td><button onclick="cambiaEstado(${data[i].activo}, ${i})" type="button" class="btn btn-outline-primary">Estado</button></td>
         </tr>
         `
   }
@@ -145,7 +177,7 @@ const dibujarTabla = () => {
             </tbody>
         </table>
     `
-  console.log(cad); // veo por consola si arme bien table
+  //console.log(cad); // veo por consola si arme bien table
   // modifico el contenido de la etiqueta HTML que tiene
   // id="idtabla", con el contenido de la variable cad
   document.getElementById("idtabla").innerHTML = cad;

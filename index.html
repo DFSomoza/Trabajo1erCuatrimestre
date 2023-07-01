@@ -222,23 +222,30 @@
                     <i class="fa fa-sms" style="width:20px"></i>WhatsApp: +54 9 2284 58-4362<br>
                     <i class="fa fa-envelope" style="width:20px"> </i> email: dfsistemas64@hotmail.com<br>
                 </div>
-                <!--form method="POST" name="contacto" data-netlify="true"-->
-                <form action="15.1- show_data.html" target="_blank">
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Nombre" required name="Name"
-                            id="nombreIngresado" style="width: 400px;">
+                <form id="formul">
+                    <div>
+                        <!-- aqui va el formulario -->
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <div class="flex-grow-1">
+                                <input id="nombre" class="form-control" type="text" placeholder="Nombre" style="width: 400px";/>
+                                <small id="error-nombre" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center item-fomulario">
+                            <div class="flex-grow-1">
+                                <input id="email" class="form-control" type="email" placeholder="nombre@ejempo.com"/>
+                                <small id="error-email" class="mensaje-error"></small>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <textarea class="form-control" id="areaTexto" rows="3" placeholder="Mensaje"></textarea>
+                            <small id="error-texto" class="mensaje-error"></small>
+                        </div>
+
                     </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="exampleFormControlInput1" required name="email"
-                            placeholder="nombre@ejemplo.com" style="width: 400px;">
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Mensaje"
-                            required name="Message" style="width: 400px;"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn btn-success" type="submit" id="submit">Enviar</button>
-                        <a class="btn btn-info" href="index.html" role="button">Retornar</a>
+                    <div class="d-flex flex-row justify-content-end botonera">
+                        <a href="index.html" class="btn btn-outline-danger">Retornar</a>
+                        <button id="enviar-btn" type="button" class="btn btn-outline-success">Enviar Consulta</button>
                     </div>
                 </form>
             </div>
