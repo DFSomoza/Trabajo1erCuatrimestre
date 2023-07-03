@@ -1,3 +1,8 @@
+// variable para identificar si es nuevo Medico y Modificado
+var esNuevo = true;
+// variable para actualizar datos
+var indice = 0;
+
 const esEmailValido = (email) => {
   const emailRegex = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm");
   return emailRegex.test(email)
@@ -22,28 +27,32 @@ const validarNombre = () => {
 const limpiarFormulario = () => {
   let formulario = document.getElementById('formul');
   formulario.reset();
+  document.getElementById('tituloMedico').innerHTML = "Nuevo Médico";
 }
 
 
 
-const nuevoMedico = () => {
+const nuevoMedico = (esNuevo, indice) => {
+  console.log(esNuevo, indice);
   let formularioCorrecto = true;
   let nuevoCodigo = 0;
-  // Nuevo arreglo vacío
-  let aMedicos = [];
-  // Convierto un json a un array
-  // Realizo un push de cada iteración al nuevo arreglo con atributo codigo
-  if (data.length > 0) {
-    data.forEach((item) => {
-      aMedicos.push(item.codigo);
-    });
-    console.log(aMedicos);
-    // Obtengo el máximo del array para luego sumarle 1
-    nuevoCodigo = Math.max(...aMedicos) + 1;
-  } else {
-    nuevoCodigo += 1;
+  if (esNuevo) {
+    document.getElementById('tituloMedico').innerHTML = "Nuevo Médico";
+    // Nuevo arreglo vacío
+    let aMedicos = [];
+    // Convierto un json a un array
+    // Realizo un push de cada iteración al nuevo arreglo con atributo codigo
+    if (data.length > 0) {
+      data.forEach((item) => {
+        aMedicos.push(item.codigo);
+      });
+      console.log(aMedicos);
+      // Obtengo el máximo del array para luego sumarle 1
+      nuevoCodigo = Math.max(...aMedicos) + 1;
+    } else {
+      nuevoCodigo += 1;
+    }
   }
-  console.log(nuevoCodigo);
   const nombreMedico = document.getElementById('nombre').value;
   const nombreEspecialidad = document.getElementById('especialidad').value;
   const diasDeAtencion = document.getElementById('atencion').value;
@@ -94,22 +103,35 @@ const nuevoMedico = () => {
   }
 
   if (formularioCorrecto) {
+    if (esNuevo) {
+      const nuevoMedico = {
+        codigo: nuevoCodigo,
+        nombre: nombreMedico,
+        especialidad: nombreEspecialidad,
+        descripcion: diasDeAtencion,
+        contacto: direccionDeEmail,
+        activo: true
+      };
+      data.push(nuevoMedico);
+    } else {
 
-    const nuevoMedico = {
-      codigo: nuevoCodigo,
-      nombre: nombreMedico,
-      especialidad: nombreEspecialidad,
-      descripcion: diasDeAtencion,
-      contacto: direccionDeEmail,
-      activo: true
-    };
-    data.push(nuevoMedico);
+      const nuevoMedico = {
+        nombre: nombreMedico,
+        especialidad: nombreEspecialidad,
+        descripcion: diasDeAtencion,
+        contacto: direccionDeEmail
+      };
+      data[indice].nombre = nombreMedico;
+      data[indice].especialidad = nombreEspecialidad;
+      data[indice].descripcion = diasDeAtencion;
+      data[indice].contacto = direccionDeEmail;
+    }
     console.log(data);
     dibujarTabla();
+    limpiarFormulario();
   } else {
     console.log("Formulario incorrecto");
   }
-  limpiarFormulario();
 }
 //*********** Funcion Eliminar Medico **********************//
 const eliminaMedico = (identificador) => {
@@ -118,29 +140,41 @@ const eliminaMedico = (identificador) => {
   dibujarTabla();
 }
 
+/*
 const cambiaEstado = (estado, identificador) => {
   console.log(estado, identificador);
-  //let lActivo =  document.getElementById(String(identificador)).innerHTML = false;
-  //console.log(lActivo);
-  if (estado) {
+  var miChekBox = document.getElementById(String(identificador));
+  console.log(miChekBox.checked);
+  if (miChekBox.checked) {
+    miChekBox.removeAttribute("checked")
     data[identificador].activo = false;
-    document.getElementById(String(identificador)).innerHTML = false;
-    /*
-    document.data["ck" + String(estado)].style.display = "none";
-    document.data["ck" + String(estado)].value = false;
-    document.getElementByName("ck" + String(estado)).innerHTML = "";
-    */
+    //document.getElementById(String(identificador)).innerHTML = false;
   } else {
-      data[identificador].activo = true;
-      document.getElementById(String(identificador)).innerHTML = true;
+    miChekBox.setAttribute("checked", "true")
+    data[identificador].activo = true;
+    //document.getElementById(String(identificador)).innerHTML = true;
   }
-  console.log(data[identificador].activo);
-  dibujarTabla();
+  console.log(miChekBox);
+  //dibujarTabla();
+}
+*/
+
+const modificaMedico = (identificador) => {
+  esNuevo = false;
+  indice = identificador;
+  const nuevoCodigo = data[identificador].codigo;
+  document.getElementById('nombre').value = data[identificador].nombre;
+  document.getElementById('especialidad').value = data[identificador].especialidad;
+  document.getElementById('atencion').value = data[identificador].descripcion;
+  document.getElementById('email').value = data[identificador].contacto;
+  document.getElementById('tituloMedico').innerHTML = "Modifica Médico";
+  //dibujarTabla();
 }
 
 const dibujarTabla = () => {
   //if (document.getElementById("idtabla")) {
   // la tabla tiene un encabezado fijo
+  esNuevo = true;
   cad = `
     <table class="table">
         <thead class="table-light">
@@ -166,12 +200,14 @@ const dibujarTabla = () => {
             <td>${data[i].especialidad}</td>
             <td>${data[i].descripcion}</td>
             <td>${data[i].contacto}</td>
-            <td><input type="checkbox" value="" name ="check${i}" id="${i}" ></td>
-            <td><button onclick="eliminaMedico(${i})" type="button" class="btn btn-outline-success">Eliminar</button></td>
-            <td><button onclick="cambiaEstado(${data[i].activo}, ${i})" type="button" class="btn btn-outline-primary">Estado</button></td>
+            <td><input type="checkbox" value="" name ="check${i}" id="${i}" checked ></td>
+            <td><button onclick="modificaMedico(${i})" type="button" class="btn btn-outline-success">Modificar</button></td>
+            <td><button onclick="eliminaMedico(${i})" type="button" class="btn btn-outline-danger">Eliminar</button></td>
         </tr>
         `
   }
+
+  // <td><button onclick="cambiaEstado(${data[i].activo}, ${i})" type="button" class="btn btn-outline-primary">Estado</button></td>
   // le agrego el cierre de la etiqueta table 
   cad += `
             </tbody>
@@ -184,8 +220,56 @@ const dibujarTabla = () => {
   //}
 }
 
+
+const dibujarFormulario = () => {
+  //if (document.getElementById("formul")) {
+  // la tabla tiene un encabezado fijo
+  document.getElementById('tituloMedico').innerHTML = "Nuevo Médico";
+  cad = `
+    <div>
+      <div class="d-flex flex-row align-items-center item-fomulario">
+        <label class="form-label">Nombre:</label>
+        <div class="flex-grow-1">
+          <input id="nombre" class="form-control" type="text" />
+          <small id="error-nombre" class="mensaje-error"></small>
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center item-fomulario">
+        <label class="form-label">Especialidad:</label>
+        <div class="flex-grow-1">
+          <input id="especialidad" class="form-control" type="text" />
+          <small id="error-especialidad" class="mensaje-error"></small>
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center item-fomulario">
+        <label class="form-label">Atención:</label>
+        <div class="flex-grow-1">
+          <input id="atencion" class="form-control" type="text" />
+          <small id="error-atencion" class="mensaje-error"></small>
+        </div>
+      </div>
+      <div class="d-flex flex-row align-items-center item-fomulario">
+        <label class="form-label">Email:</label>
+        <div class="flex-grow-1">
+          <input id="email" class="form-control" type="email" />
+          <small id="error-email" class="mensaje-error"></small>
+        </div>
+      </div>
+    </div>
+      <div class="d-flex flex-row justify-content-end botonera"></div>
+        <button type="button" class="btn btn-success" onclick="nuevoMedico(esNuevo, indice)">Grabar</button>
+        <a href="#" class="btn btn-info" onclick="windows.scrollTo(0,0)">Retornar</a>
+        <!--a class="btn btn-info" href="EditarTarea.html" role="button">Retornar</a-->
+    </div>
+  `
+  document.getElementById("formul").innerHTML = cad;
+}
+
+
+
 const inicializarJs = () => {
   dibujarTabla();
+  dibujarFormulario();
 }
 
 window.addEventListener('load', inicializarJs);

@@ -97,10 +97,11 @@ const enviarFormulario = () => {
         console.log("Nombre:", nombreConsulta.value);
         console.log("Email:", direccionDeEmail.value);
         console.log("Mensaje:", areaTexto.value);
+        limpiarFormulario();
     } else {
         console.log("Formulario incorrecto");
     }
-    limpiarFormulario();
+   
 }
 
 

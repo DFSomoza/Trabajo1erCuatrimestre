@@ -53,7 +53,7 @@
     </header>
     <main>
         <div class="container">
-            <a href="#nuevoMedico" class="btn btn-success" style="margin-top: 5px;">Agregar Médico</a>
+            <a href="#nuevoMedico" class="btn btn-success agrega" style="margin-top: 5px;">Agregar Médico</a>
             <div id="idtabla">
 
 
@@ -61,42 +61,9 @@
         </div>
         <section id="nuevoMedico">
             <div class="container">
-                <h2>Nuevo Médico</h2>
+                <h2 id="tituloMedico"></h2>
                 <form id="formul">
-                    <div>
-                        <div class="d-flex flex-row align-items-center item-fomulario">
-                            <label class="form-label">Nombre:</label>
-                            <div class="flex-grow-1">
-                                <input id="nombre" class="form-control" type="text" />
-                                <small id="error-nombre" class="mensaje-error"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center item-fomulario">
-                            <label class="form-label">Especialidad:</label>
-                            <div class="flex-grow-1">
-                                <input id="especialidad" class="form-control" type="text" />
-                                <small id="error-especialidad" class="mensaje-error"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center item-fomulario">
-                            <label class="form-label">Atención:</label>
-                            <div class="flex-grow-1">
-                                <input id="atencion" class="form-control" type="text" />
-                                <small id="error-atencion" class="mensaje-error"></small>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row align-items-center item-fomulario">
-                            <label class="form-label">Email:</label>
-                            <div class="flex-grow-1">
-                                <input id="email" class="form-control" type="email" />
-                                <small id="error-email" class="mensaje-error"></small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-row justify-content-end botonera"></div>
-                        <button type="button" class="btn btn-success" onclick="nuevoMedico()">Grabar</button>
-                        <!--a class="btn btn-info" href="EditarTarea.html" role="button">Retornar</a-->
-                    </div>
+                    
                 </form>
             </div>
         </section>
